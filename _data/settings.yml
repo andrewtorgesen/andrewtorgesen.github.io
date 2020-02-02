@@ -18,7 +18,7 @@ menu_settings:
     - title: 'Autonomy'
       url: '/autonomy/'
     - title: 'Software Tools'
-      url: '/software-tools/'
+      url: '/softwaretools/'
     - title: 'Digital Art'
       url: '/DigitalArt'
     - title: 'Essays'

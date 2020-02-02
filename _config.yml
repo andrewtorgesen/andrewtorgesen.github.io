@@ -38,6 +38,9 @@ collections:
   autonomy:
     output: true
     permalink: /autonomy/:title
+  softwaretools:
+    output: true
+    permalink: /softwaretools/:title
 #   # members:
 #   #   output: true
 #   #   permalink: /people/:title

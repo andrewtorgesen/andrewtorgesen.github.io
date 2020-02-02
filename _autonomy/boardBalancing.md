@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: Board Balancing Technical Project
-subtitle: A personal attempt to apply linear control theory to a real-world system.
+title: "Board Balancing Technical Project"
+subtitle: "A personal attempt to apply linear control theory to a real-world system."
 featured_image: /images/projects/BBDiagram.svg
 active: true
 ---
