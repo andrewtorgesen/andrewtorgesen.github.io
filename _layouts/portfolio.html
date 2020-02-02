@@ -1,0 +1,36 @@
+---
+layout: default
+title: Portfolio
+description: A minimal, fixed sidebar grid portfolio Jekyll theme.
+featured_image: /images/social.jpg
+permalink: '/portfolio/index.html'
+---
+
+{% assign active_autonomy = site.autonomy | where: 'active', 'true' %}
+
+<section class="portfolio">
+
+	<div class="content-wrap portfolio-wrap">
+		{% for project in active_autonomy %}
+		<div class="portfolio-item">
+			<a class="portfolio-item__link" href="{{ project.url }}">
+				<div class="portfolio-item__image">
+					{% if project.featured_image %}
+						<img src="{{ project.featured_image  }}" alt="{{ project.title }}">
+					{% else %}
+						<img src="{% cycle '/images/demo/demo-square.jpg', '/images/demo/demo-landscape.jpg', '/images/demo/demo-landscape-2.jpg' %}" alt="{{ project.title }}">
+					{% endif %}
+				</div>
+				<div class="portfolio-item__content color_{% cycle 'one', 'two', 'three' %}">
+					<div class="portfolio-item__info">
+						<h2 class="portfolio-item__title">{{ project.title }}</h2>
+						<p class="portfolio-item__subtitle">{{ project.subtitle }}</p>
+					</div>
+				</div>
+
+			</a>
+
+		</div>
+		{% endfor %}
+	</div>
+</section>

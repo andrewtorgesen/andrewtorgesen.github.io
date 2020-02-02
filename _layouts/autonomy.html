@@ -1,0 +1,22 @@
+---
+layout: default
+title: Autonomy Projects
+description: Personal projects pertaining to subjects in Robotics and Autonomy.
+permalink: '/autonomy/index.html'
+---
+
+Hmmm.
+
+{% for item in site.autonomy %}
+
+<p>{{ item.title }}</p>
+
+{% endfor %}
+
+<!-- <ul>
+	{% for item in site.autonomy limit:33 %}
+	{% if item.url contains 'EstimationAndSysID' and item.url != '/autonomy/' and item.url != '/autonomy/EstimationAndSysID/' %}
+	<li><a href="{{ item.url }}">{{ item.title }}</a></li>
+	{% endif %}
+	{% endfor %}
+</ul> -->
