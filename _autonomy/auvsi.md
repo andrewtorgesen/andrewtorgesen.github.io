@@ -35,7 +35,4 @@ Thus, what was unique about this project for me was that the sheer breadth of ta
   - Designing a framework for systematic team-wide documentation of the subsystem designs and testing efforts.
   - Mentoring the controls/autonomy subteam in their efforts to climb the enormous learning curve.
 
-
-
-
-++++
+While there were many challenges and idiosyncratic personalities to work with along the way, the competition effort was very stimulating and rewarding for everyone on the team. We ended with a system we were proud of--check it out in the technical design paper if you're interested--and performed very well at the competition, stacking up against schools who already had a storied history with the effort in past years. And although I love the work of the nitty gritty in engineering as much as anyone, I was especially grateful that my level of relevant experience afforded me the chance to focus on the more human elements of a large engineering undertaking in a leadership capacity. None of it would have been possible without my very talented teammates, and working in a capacity where I could try to help bring out the best in them ended up being what I enjoyed the most from this capstone project.
