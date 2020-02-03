@@ -5,7 +5,7 @@ basic_settings:
 
 header_settings:
   logo_image: /images/logos/AJT_black.svg
-  logo_width: 200
+  logo_width: 150
 
 resume_url: '/resume/Resume_AndrewTorgesen.pdf'
 
@@ -22,9 +22,9 @@ menu_settings:
     - title: 'Digital Art'
       url: '/DigitalArt'
     - title: 'Essays'
-      url: '/essays/'
+      url: '/Essays'
     - title: 'Contact'
-      url: '/contact/'
+      url: '/Contact'
 
 grid_settings:
   overlay_opacity: 0.95

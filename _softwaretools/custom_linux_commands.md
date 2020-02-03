@@ -6,4 +6,8 @@ featured_image: /images/projects/clc_cover.png
 active: true
 ---
 
-++++
+* * *
+[Link to Repository](https://github.com/goromal/custom_linux_commands)
+* * *
+
+**[PROJECT DESCRIPTION COMING SOON!]**

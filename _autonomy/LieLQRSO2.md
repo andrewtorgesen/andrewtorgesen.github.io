@@ -8,7 +8,7 @@ active: true
 
 * * *
 
-[Check out the paper!]({{ site.url }}/res/Lie LQR SO2.pdf)
+[Check out the paper!]({{ site.url }}/res/Lie LQR SO2.pdf) That's where the good stuff is.
 
 * * *
 

@@ -10,6 +10,8 @@ active: true
 [System-Level Technical Design Paper]({{ site.url }}/res/TechnicalDesignPaper.pdf)
 * * *
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8mwPEsZdfLQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 For my final "Capstone" project of my undergraduate studies in Mechanical Engineering, I assumed the role of team captain on my school's competition team for the international [AUVSI-SUAS](https://www.auvsi-suas.org) unmanned aircraft competition. Due to the specialized nature and demands of the competition, admission to the team was through application and selection. Because of this, much of the top talent in the Mechanical, Electrical, and Computer Engineering departments was found on the team, united by a passion for controls, autonomy, and aviation.
 
 For the competition, our challenge was to, over the span of 10 months, design and build an unmanned aircraft platform that could do the following:
@@ -19,8 +21,8 @@ For the competition, our challenge was to, over the span of 10 months, design an
   - Autonomously classify the letter, shape, and color of each visual target.
   - Drop a payload from at least 100 feet up onto a goal location, preserving the structural integrity of the payload.
   - Take mission-level commands from a ground station in real-time.
-  
-Our team, which consisted 12 members, was faced with the monumental task of designing, building, and documenting for future teams an interconnected system capable of accomplishing all of the competition requirements, which span the fields of computer science, path planning, computer vision, control theory, machine learning, aerospace design, electrical engineering, and robotics. 
+
+Our team, which consisted 12 members, was faced with the monumental task of designing, building, and documenting for future teams an interconnected system capable of accomplishing all of the competition requirements, which span the fields of computer science, path planning, computer vision, control theory, machine learning, aerospace design, electrical engineering, and robotics.
 
 Although the subject matter and learning curves were daunting, we were also all very motivated and hard-working individuals. Each member of the team could be trusted to learn the requisite material and tools to accomplish everything that we needed to. As a matter of fact, as the months wore on, it became clear that the real challenge associated with the project was to keep the effort organized, focused, efficient, and well-engineered. So, although at first I focused most of my efforts on matters pertaining to the autopilot and the higher level path planning and estimation algorithms, my role gradually evolved to something much more similar to a high-level Systems Engineer.
 

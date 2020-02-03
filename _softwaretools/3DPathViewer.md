@@ -1,9 +1,15 @@
-# 3D iPhone Path Viewer
-
-\\(\ddagger\\) [Try it out!](../../../apps/map-viewer) \\(\ddagger\\)
+---
+layout: doc
+title: 3D iPhone Path Viewer
+subtitle: An in-browser simple app for visualizing GPS trajectories superimposed on a 3D map.
+featured_image: /images/projects/map_cover.jpeg
+active: true
+---
+* * *
+**[APP DEMO COMING SOON!]**
 * * *
 
-## Motivation
+# Motivation
 
 My family loves to go on hikes in mountainous and scenic locations. Intrigued by the possibilities of localization technology, and realizing that I had a decent position estimator in my pocket, I decided to create a web app that allows you to easily visualize paths you have traversed, all superimposed on a 3D map. With this web app, now I can quickly pull up a visualization of a recently completed adventure on any device with a browser and showcase it to all the participants, which I thoroughly enjoy.
 
@@ -11,7 +17,7 @@ It only took a couple of days to put together, thanks to the wonders of web deve
 
 Besides the slightly niche yet personally satisfying application, this project exposed me more to JavaScript and its role in web development. I find the Node framework to be a provocatively modular and concise tool for app development, and the notion of developing code to run in the browser is becoming increasingly attractive to me for personal projects.
 
-## Usage
+# Usage
 
 This web app is designed to be used with the [Sensor Log](http://sensorlog.berndthomas.net) iOS app, which utilizes the sensor suite on the iPhone to log a wide variety of inertial and other sensor data in csv files.
 
@@ -33,4 +39,4 @@ If you don't have the Sensor Log app and want to try the path viewer out anyway,
 
 Here's a path I recorded a couple of years ago on a hike to Lake Winnemucca, visualized in my iPhone's browser:
 
-![](./winhike.jpeg "Hike to Winnemucca.")
+![](/images/projects/winhike.jpeg "Hike to Winnemucca.")

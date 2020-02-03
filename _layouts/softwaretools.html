@@ -1,22 +1,35 @@
 ---
 layout: default
 title: "Software Tools"
-description: "Having some fun with small software projects."
 permalink: '/softwaretools/index.html'
 ---
 
-Hmmm.
+<div class="member-intro">
 
-{% for item in site.softwaretools %}
+<h1 style="margin-top: 40px;">{{ page.title }}</h1>
 
-<p>{{ item.title }}</p>
+<br><br>
+
+<p>{{ page.description }}</p>
+
+<br>
+
+{{ content }}
+
+<br>
+
+{% assign active_soto = site.softwaretools | where: 'active', 'true' %}
+
+<ul>
+
+{% for item in active_soto %}
+
+<li><a href="{{ item.url }}">{{ item.title }}</a></li>
 
 {% endfor %}
 
-<!-- <ul>
-	{% for item in site.autonomy limit:33 %}
-	{% if item.url contains 'EstimationAndSysID' and item.url != '/autonomy/' and item.url != '/autonomy/EstimationAndSysID/' %}
-	<li><a href="{{ item.url }}">{{ item.title }}</a></li>
-	{% endif %}
-	{% endfor %}
-</ul> -->
+</ul>
+
+<br><br>
+
+</div>

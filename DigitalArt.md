@@ -1,8 +1,7 @@
 ---
-layout: default
+layout: doc
+title: Digital Art
 ---
-
-# Digital Art
 
 ## Landscapes
 
