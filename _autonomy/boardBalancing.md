@@ -29,7 +29,7 @@ Basically, the challenge is to have a person balance on top of a board, which in
 
 I used the Euler-Lagrange method to model the dynamics of the board balancing system, and decided to try using a state space feedback controller with an integrator to control the system to commanded cylinder rotation angles.
 
-All of my work and the final dynamics/controller equations can be found in [the notes I made over Thanksgiving break]({{ site.url }}/res/Board Balancing.pdf). I thought it would be fun to include my hand-written notes to demonstrate both my meandering efforts and the way I like to take notes on all kinds of subjects. There are a lot of colors and pasted images involved, as I prefer to gather information from all around the internet to fill in emergent gaps in my understanding as I go.
+All of my work and the final dynamics/controller equations can be found in [the notes I made over Thanksgiving break](https://andrewtorgesen.github.io/res/Board Balancing.pdf). I thought it would be fun to include my hand-written notes to demonstrate both my meandering efforts and the way I like to take notes on all kinds of subjects. There are a lot of colors and pasted images involved, as I prefer to gather information from all around the internet to fill in emergent gaps in my understanding as I go.
 
 # Matlab Implementation
 

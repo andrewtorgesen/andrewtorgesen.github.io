@@ -8,11 +8,11 @@ active: true
 
 * * *
 
-[Project Poster]({{ site.url }}/res/16.31 Project Poster - Andrew Torgesen.pdf)
+[Project Poster](https://andrewtorgesen.github.io/res/16.31 Project Poster - Andrew Torgesen.pdf)
 
-[Project Presentation]({{ site.url }}/res/16.31 Final Project Presentation.pdf)
+[Project Presentation](https://andrewtorgesen.github.io/res/16.31 Final Project Presentation.pdf)
 
-[Project Paper]({{ site.url }}/res/16.31 Final Project PAPER.pdf)
+[Project Paper](https://andrewtorgesen.github.io/res/16.31 Final Project PAPER.pdf)
 
 * * *
 

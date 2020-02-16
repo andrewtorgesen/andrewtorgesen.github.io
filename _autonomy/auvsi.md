@@ -7,7 +7,7 @@ active: true
 ---
 
 * * *
-[System-Level Technical Design Paper]({{ site.url }}/res/TechnicalDesignPaper.pdf)
+[System-Level Technical Design Paper](https://andrewtorgesen.github.io/res/TechnicalDesignPaper.pdf)
 * * *
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8mwPEsZdfLQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

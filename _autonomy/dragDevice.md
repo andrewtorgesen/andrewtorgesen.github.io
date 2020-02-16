@@ -7,7 +7,7 @@ active: true
 ---
 
 * * *
-[Full Report]({{ site.url }}/res/DragDeviceReport.pdf)
+[Full Report](https://andrewtorgesen.github.io/res/DragDeviceReport.pdf)
 * * *
 
 This project was one of my first exposures to rigorous analysis with sensors, uncertainty quantification, Lab View, and technical reporting on those things.

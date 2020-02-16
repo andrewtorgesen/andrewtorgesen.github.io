@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: about
-portrait: /images/Headshot_Sketch.png
+portrait: /images/Headshot-NF.jpg
 signature: /images/art/over-the-top-signature.svg
 ---
 
