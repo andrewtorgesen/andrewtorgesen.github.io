@@ -3,6 +3,7 @@ layout: doc
 title: 7-DOF Robot Arm Particle Filter
 subtitle: An investigation into non-parametric belief state representations.
 featured_image: /images/projects/particleIK.png
+mathjax: true
 active: true
 ---
 
@@ -36,14 +37,14 @@ As one can imagine, having a greater number of particles tends to lead to both b
 
 Putting everything together, the algorithm at each time step looks roughly like this:
 
-```
+
 1. Initialize particles concentrated around the given initial joint state in the joint configuration space
 2. For each time step:
     3. Using the joint torques, propagate the particles forward in time with a dynamic model that has Monte Carlo-like variations in parameters for each particle (resembling mutation in a genetic algorithm)
     4. Calculate the forward kinematics of each particle and compare the result with the measured end effector pose
     5. Use the results from (4.) to assign new probability weights to each particle
     6. Resample and normalize particle weights as needed
-```
+
 
 # Experiment and Results
 
@@ -53,7 +54,7 @@ Here are the results, which compare the performance of the full particle filter 
 
 ![](/images/projects/report_fig.svg "Particle filter joint state estimation performance for all 7 of Baxter's joints.")
 
-As an alternative illustration of the particle filter performance, here's an animation comparing how Baxter *actually moved* (\\(x\\)) over the course of the trajectory with how the particle filter *thought it moved* (\\(\hat{x}\\)) based on its estimates:
+As an alternative illustration of the particle filter performance, here's an animation comparing how Baxter *actually moved* ($x$) over the course of the trajectory with how the particle filter *thought it moved* ($\hat{x}$) based on its estimates:
 
 ![](/images/projects/armComparison.gif "Reconstructed robot arm trajectory from particle filter estimates.")
 

@@ -3,11 +3,12 @@ layout: doc
 title: "6-DOF Camera Extrinsics Calibration"
 subtitle: "Undergraduate research project."
 featured_image: /images/projects/cc_frames.svg
+mathjax: true
 active: true
 ---
 * * *
 
-$$\ddagger$$ [Link to Github Repository](https://github.com/goromal/camera-extrinsics-calibrator) $$\ddagger$$
+$\ddagger$ [Link to Github Repository](https://github.com/goromal/camera-extrinsics-calibrator) $\ddagger$
 
 * * *
 
@@ -34,33 +35,33 @@ All vector quantities in the camera extrinsics calibration problem are expressed
 - **The camera frame ($$\mathcal{C}$$):** This frame is centered on the pinhole convergence point of the camera attached to the UAV. From the perspective of the camera image, the x-axis sticks out to the right, the y-axis points down, and the z-axis points out of the camera plane toward the world.
 - **The camera pixel frame ($$\mathcal{C}_\mathcal{P}$$):** This frame coincides with the camera frame in terms of orientation, but is centered on the image plane, where units are measured in pixels.
 
-Additionally, the following vectors in $$\mathbb{R}^n$$ and manifold objects (read my [paper](/autonomy/LieLQRSO2) on Lie Algebra math!) in $$\mathbb{S}^3$$ (the space of unit-length quaternions, though the following equations will use their rotation matrix counterparts instead, for clarity) are relevant to the calculations in the algorithm:
+Additionally, the following vectors in $\mathbb{R}^n$ and manifold objects (read my [paper](/autonomy/LieLQRSO2) on Lie Algebra math!) in $\mathbb{S}^3$ (the space of unit-length quaternions, though the following equations will use their rotation matrix counterparts instead, for clarity) are relevant to the calculations in the algorithm:
 
-- $$^\mathcal{B}x_{\mathcal{C},0} \in \mathbb{R}^3$$: The **initial guess** for the translational offset between the origin of the UAV body frame and the origin of the camera frame. Expressed in the body frame.
-- $$q_{\mathcal{B},0}^\mathcal{C} \in \mathbb{S}^3$$: The **initial guess** for the (passive) rotational offset between the UAV body frame and the camera frame.
-- $$^\mathcal{B}x_{\mathcal{C},f} \in \mathbb{R}^3$$: The **calculated** translational offset between the origin of the UAV body frame and the origin of the camera frame, as a result of the optimization routine. Expressed in the body frame.
-- $$q_{\mathcal{B},f}^\mathcal{C} \in \mathbb{S}^3$$: The **calculated** (passive) rotational offset between the UAV body frame and the camera frame, as a result of the optimization routine.
-- $$^\mathcal{I}x_\mathcal{B} \in \mathbb{R}^3$$: The translation vector of the UAV with respect to the initial origin at the current time step. Expressed in the inertial frame.
-- $$q_\mathcal{I}^\mathcal{B} \in \mathbb{S}^3$$: The (passive) rotation of the UAV with respect to the inertial frame at the current time step.
-- $$^\mathcal{I}l_i \in \mathbb{R}^3$$: The position of stationary visual landmark $$i$$ with respect to the inertial origin. Expressed in the inertial frame.
-- $$^{\mathcal{C}_\mathcal{P}}p_i \in \mathbb{R}^2$$: The measured pixel coordinates $$\begin{bmatrix}u_i & v_i\end{bmatrix}^T$$ of landmark $$i$$ in the image plane. Expressed in the camera pixel frame.
-- $$^{\mathcal{C}_\mathcal{P}}\hat{p}_i \in \mathbb{R}^2$$: The **theoretical** pixel coordinates $$\begin{bmatrix}\hat{u}_i & \hat{v}_i\end{bmatrix}^T$$ of landmark $$i$$ in the image plane, given the initial guess for the extrinsic camera parameters.
-- $$f \in \mathbb{R}^2$$: The focal lengths $$\begin{bmatrix}f_x & f_y\end{bmatrix}^T$$ of the camera.
-- $$c \in \mathbb{R}^2$$: The center pixels $$\begin{bmatrix}c_x & c_y\end{bmatrix}^T$$ of the camera's image plane.
-- $$s \in \mathbb{R}^1$$: The skew of the camera, which defines horizontal shear of the pixels in the image plane.
-- $$d \in \mathbb{R}^5$$: The camera's (radial) distortion parameters $$\begin{bmatrix}k_1 & k_2 & p_1 & p_2 & k_3\end{bmatrix}^T$$. See the radial distortion model subsection for a more detailed explanation.
+- $^\mathcal{B}x_{\mathcal{C},0} \in \mathbb{R}^3$: The **initial guess** for the translational offset between the origin of the UAV body frame and the origin of the camera frame. Expressed in the body frame.
+- $q_{\mathcal{B},0}^\mathcal{C} \in \mathbb{S}^3$: The **initial guess** for the (passive) rotational offset between the UAV body frame and the camera frame.
+- $^\mathcal{B}x_{\mathcal{C},f} \in \mathbb{R}^3$: The **calculated** translational offset between the origin of the UAV body frame and the origin of the camera frame, as a result of the optimization routine. Expressed in the body frame.
+- $q_{\mathcal{B},f}^\mathcal{C} \in \mathbb{S}^3$: The **calculated** (passive) rotational offset between the UAV body frame and the camera frame, as a result of the optimization routine.
+- $^\mathcal{I}x_\mathcal{B} \in \mathbb{R}^3$: The translation vector of the UAV with respect to the initial origin at the current time step. Expressed in the inertial frame.
+- $q_\mathcal{I}^\mathcal{B} \in \mathbb{S}^3$: The (passive) rotation of the UAV with respect to the inertial frame at the current time step.
+- $^\mathcal{I}l_i \in \mathbb{R}^3$: The position of stationary visual landmark $i$ with respect to the inertial origin. Expressed in the inertial frame.
+- $^{\mathcal{C}_\mathcal{P}}p_i \in \mathbb{R}^2$: The measured pixel coordinates $\begin{bmatrix}u_i & v_i\end{bmatrix}^T$ of landmark $i$ in the image plane. Expressed in the camera pixel frame.
+- $^{\mathcal{C}_\mathcal{P}}\hat{p}_i \in \mathbb{R}^2$: The **theoretical** pixel coordinates $\begin{bmatrix}\hat{u}_i & \hat{v}_i\end{bmatrix}^T$ of landmark $i$ in the image plane, given the initial guess for the extrinsic camera parameters.
+- $f \in \mathbb{R}^2$: The focal lengths $\begin{bmatrix}f_x & f_y\end{bmatrix}^T$ of the camera.
+- $c \in \mathbb{R}^2$: The center pixels $\begin{bmatrix}c_x & c_y\end{bmatrix}^T$ of the camera's image plane.
+- $s \in \mathbb{R}^1$: The skew of the camera, which defines horizontal shear of the pixels in the image plane.
+- $d \in \mathbb{R}^5$: The camera's (radial) distortion parameters $\begin{bmatrix}k_1 & k_2 & p_1 & p_2 & k_3\end{bmatrix}^T$. See the radial distortion model subsection for a more detailed explanation.
 
 In order for the optimization routine to be accurate, a reasonably high fidelity model of the camera sensor must be used in the calculations. The following sections define the camera model as well as the residual calculation for the nonlinear least-squares optimizer.
 
 ## Camera Model: Transforming to the Camera Frame
 
-Given an inertial landmark position $$^\mathcal{I}l_i$$, the landmark coordinates are transformed into the camera frame, simultaneously translating the origin to coincide with the origin of the camera frame using rigid body homogeneous transform matrices $$H_a^b \in SE(3)$$. This requires projecting $$^\mathcal{I}l_i$$ into homogeneous coordinates $$^\mathcal{I}\mathbf{l}_i \in \mathbb{R}^4$$.
+Given an inertial landmark position $^\mathcal{I}l_i$, the landmark coordinates are transformed into the camera frame, simultaneously translating the origin to coincide with the origin of the camera frame using rigid body homogeneous transform matrices $H_a^b \in SE(3)$. This requires projecting $^\mathcal{I}l_i$ into homogeneous coordinates $^\mathcal{I}\mathbf{l}_i \in \mathbb{R}^4$.
 
-As a short review, a homogeneous matrix $$H_a^b$$ that transforms a point (expressed in homogeneous coordinates) from frame $$a$$ to frame $$b$$ is composed from the respective rotation matrix and translation vector:
+As a short review, a homogeneous matrix $H_a^b$ that transforms a point (expressed in homogeneous coordinates) from frame $a$ to frame $b$ is composed from the respective rotation matrix and translation vector:
 
-$$H_a^b = \begin{bmatrix}R_a^b & R_a^{ba}x_b; & 0 & 1\end{bmatrix}$$.
+$H_a^b = \begin{bmatrix}R_a^b & R_a^{ba}x_b; & 0 & 1\end{bmatrix}$.
 
-Homogeneous matrices can be multiplied together to get a resultant transform matrix, as with rotation matrices. Thus, $$H_\mathcal{I}^\mathcal{C}$$ (or $$H(\mathcal{I}\rightarrow\mathcal{C})$$) can be created by creating homogeneous matrices from $$\mathcal{I}\rightarrow\mathcal{B}$$ and $$\mathcal{B}\rightarrow\mathcal{C}$$ and composing them together.
+Homogeneous matrices can be multiplied together to get a resultant transform matrix, as with rotation matrices. Thus, $H_\mathcal{I}^\mathcal{C}$ (or $H(\mathcal{I}\rightarrow\mathcal{C})$) can be created by creating homogeneous matrices from $\mathcal{I}\rightarrow\mathcal{B}$ and $\mathcal{B}\rightarrow\mathcal{C}$ and composing them together.
 
 Thus, given the shorthand assignments
 
@@ -86,9 +87,9 @@ In our camera measurement model, it is assumed that the UAV camera lens imposes 
 
  ![](/images/projects/distortion_examples.png "Radial distortion illustration")
 
-Thus, in the model, radial distortion is applied to the point $$^\mathcal{C}l_i$$ before it is projected onto the camera pixel plane.
+Thus, in the model, radial distortion is applied to the point $^\mathcal{C}l_i$ before it is projected onto the camera pixel plane.
 
-Given a *distorted* feature location in the camera frame $$^\mathcal{C}l_{i,d}$$, the corresponding *undistorted* feature location in the camera frame $$^\mathcal{C}l_i$$ is obtained according to the following radial undistortion model:
+Given a *distorted* feature location in the camera frame $^\mathcal{C}l_{i,d}$, the corresponding *undistorted* feature location in the camera frame $^\mathcal{C}l_i$ is obtained according to the following radial undistortion model:
 
 Given the shorthand assignments
 
@@ -106,7 +107,7 @@ $$ \chi = g(\mathcal{X} + 2p_1\mathcal{X}\mathcal{Y}+p_2\mathcal{X}^2(\mathcal{Y
 
 $$ \gamma = g(\mathcal{Y} + 2p_2\mathcal{X}\mathcal{Y}+p_1\mathcal{Y}^2(\mathcal{X}^2+2)) $$
 
-To do the reverse and apply distortion to $$^\mathcal{C}l_i$$, the undistortion model must be inverted. The model cannot be inverted explicitly, so we iteratively invert it using [Newton's method of function minimization in multiple dimensions](https://en.wikipedia.org/wiki/Newton%27s_method#Nonlinear_systems_of_equations).
+To do the reverse and apply distortion to $^\mathcal{C}l_i$, the undistortion model must be inverted. The model cannot be inverted explicitly, so we iteratively invert it using [Newton's method of function minimization in multiple dimensions](https://en.wikipedia.org/wiki/Newton%27s_method#Nonlinear_systems_of_equations).
 
 ## Camera Model: Pinhole Projection
 
@@ -122,7 +123,7 @@ $$ u_i = f_x \mathcal{X} + s \mathcal{Y} + c_x $$
 
 $$ v_i = f_y \mathcal{Y} + c_y $$
 
-Giving the theoretical camera measurement $$^{\mathcal{C}_\mathcal{P}}\hat{p}_i$$.
+Giving the theoretical camera measurement $^{\mathcal{C}_\mathcal{P}}\hat{p}_i$.
 
 ## Residual Calculation
 
@@ -130,9 +131,9 @@ The calibration process uses nonlinear optimization techniques to minimize the f
 
 $$ J = \sum_t^T\sum_i^Ne^2, $$
 
-where the error is defined as the difference between the camera measurement $$^{\mathcal{C}_\mathcal{P}}p_i$$ and its theoretical, predicted counterpart for each landmark $$i$$ and time step $$t$$ in the flight trajectory. All actual camera measurements are given as inputs to the optimizer, which modifies its guess for the extrinsic camera parameters to minimize the cost function.
+where the error is defined as the difference between the camera measurement $^{\mathcal{C}_\mathcal{P}}p_i$ and its theoretical, predicted counterpart for each landmark $i$ and time step $t$ in the flight trajectory. All actual camera measurements are given as inputs to the optimizer, which modifies its guess for the extrinsic camera parameters to minimize the cost function.
 
-It is not necessary for a residual to be calculated at every possible $$(i,t)$$ combination for the optimization to work, though a wide breadth of measurements and a varied flight path increase the chances of convergence.
+It is not necessary for a residual to be calculated at every possible $(i,t)$ combination for the optimization to work, though a wide breadth of measurements and a varied flight path increase the chances of convergence.
 
 # The Code and the Experiments
 

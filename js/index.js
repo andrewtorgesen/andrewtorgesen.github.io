@@ -37,7 +37,7 @@ function toggleInfo(articleid) {
 	var History = window.History;
 
 	// State change event
-	History.Adapter.bind(window,'statechange',function(){
+	History.Adapter.bind(window,'statechange',function(){ // <<<<
 		var state = History.getState();
 		// console.log(state);
 
@@ -86,7 +86,7 @@ function toggleInfo(articleid) {
 
 	// On clicking a link
 
-	if ( $('body').hasClass('ajax-loading') ) {
+	if ( $('body').hasClass('ajax-loading') ) { // <<<<
 
 		$(document).on('click', 'a', function (event){
 
