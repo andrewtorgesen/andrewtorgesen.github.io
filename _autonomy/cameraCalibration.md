@@ -12,8 +12,6 @@ $\ddagger$ [Link to Github Repository](https://github.com/goromal/camera-extrins
 
 * * *
 
-(*If the math isn't showing up, try refreshing the page...*)
-
 # Motivation and Description
 
 Many autonomous agents such as unmanned air vehicles (UAV) leverage the fusion of visual and inertial odometry measurements for real-time state estimation and control. In order for visual-inertial odometry to be effective, it is imperative that the rigid body transform between the vision sensor (usually a camera) and the inertial measurement unit (IMU) be known precisely. Currently, ascertaining that transform usually entails a cumbersome calibration process for backing out the translation and rotation between the camera and IMU frame. Given a flight path with both camera measurements of static landmarks of known locations and inertial measurements, however, an optimization routine may be formulated which automates this process, performing an extrinsic camera calibration from measurement data. Visual landmarks with known locations can be obtained with fiducial markers such as the [ArUco tag](https://www.uco.es/investiga/grupos/ava/node/26).

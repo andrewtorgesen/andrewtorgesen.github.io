@@ -165,6 +165,7 @@ function toggleInfo(articleid) {
 
 
 		// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Show content
+		mjrender();
 
 		// Wait until first image has loaded
 		$('.page__content').find('img:first').imagesLoaded( function() {
