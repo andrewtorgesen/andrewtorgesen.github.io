@@ -3,6 +3,7 @@ layout: doc
 title: "Dynamic Programming for the Minimum-Time Control of the Inverted Pendulum and Acrobot"
 subtitle: "Class project for the graduate-level Optimal Control and Estimation course at MIT."
 featured_image: /images/projects/ip_policy.png
+mathjax: true
 active: true
 ---
 
