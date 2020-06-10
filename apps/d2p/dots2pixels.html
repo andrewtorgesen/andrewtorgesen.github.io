@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Dots 2 Pixels</title>
+    <style>
+        body { 
+            margin: 100; 
+            text-align: center;
+        }
+
+        canvas {
+            background-color: transparent;
+            border: 1px solid #ccc;
+            position:relative;
+        }
+    </style>
+</head>
+<body data-gr-c-s-loaded="true">
+
+<h1>Dots 2 Pixels</h1>
+<p><b>By Andrew Torgesen</b></p>
+<p>Delaunator algorithm implementation from <a href="https://github.com/mapbox/delaunator">here</a>.</p>
+<canvas id="canvas" width="2048" height="1391" style="width: 640px; height: 480px;"></canvas>
+<p><b>z</b> = remove last point <b>|</b> <b>p</b> = toggle "pixel mode"</p>
+<p>Drag an image into the canvas to begin!</p>
+
+<script src="./scripts/delaunator.js"></script>
+<script>
+var img = new Image();
+var w = 1024;
+var h = 600;
+var points = [];
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+ctx.lineJoin = 'round';
+ctx.lineCap = 'round';
+var delaunay;
+var image = new Image();
+var updated = false;
+var has_image = false;
+var pixel_mode = false;
+
+function render(src){
+	image.onload = function() {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		w = image.width;
+        h = image.height;
+
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        canvas.width = w;
+        canvas.height = h;
+
+        ctx.drawImage(image, 0, 0, image.width, image.height);
+        
+        points = [];
+        points.push([0,0]);
+        points.push([w,0]);
+        points.push([w.h]);
+        points.push([0,h]);
+        delaunay = Delaunator.from(points);
+        updated = true;
+        has_image = true;
+	};
+	image.src = src;
+}
+
+function loadImage(src){
+	//	Prevent any non-image file type from being read.
+	if(!src.type.match(/image.*/)){
+		alert("The dropped file is not an image: ", src.type);
+		return;
+	}
+	//	Create our FileReader and run the results through the render function.
+	var reader = new FileReader();
+	reader.onload = function(e){
+		render(e.target.result);
+	};
+	reader.readAsDataURL(src);
+}
+
+// var target = document.getElementById("drop-target");
+canvas.addEventListener("dragover", function(e){e.preventDefault();}, true);
+canvas.addEventListener("drop", function(e){
+	e.preventDefault(); 
+	loadImage(e.dataTransfer.files[0]);
+}, true);
+
+canvas.addEventListener("click", function (e) {
+    if (has_image && !pixel_mode) {
+        points.push([
+            e.layerX,
+            e.layerY
+        ]);
+        delaunay = Delaunator.from(points);
+        updated = true;
+    }
+});
+
+function drawPixels() {
+    ctx.clearRect(0, 0, w, h);
+    ctx.drawImage(image, 0, 0, image.width, image.height);
+
+    var triangles = delaunay.triangles;
+
+    for (var i = 0; i < triangles.length; i += 3) {
+        ctx.beginPath();
+        var p0 = triangles[i];
+        var p1 = triangles[i + 1];
+        var p2 = triangles[i + 2];
+        var pixelData = ctx.getImageData(Math.floor((getX(p0)+getX(p1)+getX(p2))/3.0), Math.floor((getY(p0)+getY(p1)+getY(p2))/3.0), 1, 1).data;
+        ctx.fillStyle = 'rgba(' + pixelData[0].toString() + ',' + pixelData[1].toString() + ',' + pixelData[2].toString() + ',1)';
+        ctx.moveTo(getX(p0), getY(p0));
+        ctx.lineTo(getX(p1), getY(p1));
+        ctx.lineTo(getX(p2), getY(p2));
+        ctx.closePath();
+        ctx.fill();
+    }
+}
+
+window.addEventListener("keydown", function (k) {
+    if (has_image) {
+        switch (k.keyCode) {
+            case 90: // z
+                if (points.length > 4) {
+                    points.pop();
+                    delaunay = Delaunator.from(points);
+                    updated = true;
+                }
+                break;
+            case 80: // p
+                if (pixel_mode) {
+                    pixel_mode = false;
+                    updated = true;
+                    draw();
+                }
+                else {
+                    drawPixels();
+                    updated = false;
+                    pixel_mode = true;
+                }
+                break;
+        }
+    }
+});
+
+function getX(i) {
+    return points[i][0];
+}
+function getY(i) {
+    return points[i][1];
+}
+
+function frame() {
+    requestAnimationFrame(frame);
+    draw();
+}
+frame();
+
+function draw() {
+    if (!updated) return;
+    updated = false;
+    if (pixel_mode) return;
+
+    ctx.clearRect(0, 0, w, h);
+    ctx.drawImage(image, 0, 0, image.width, image.height);
+
+    var triangles = delaunay.triangles;
+
+    ctx.beginPath();
+    for (var i = 0; i < triangles.length; i += 3) {
+        var p0 = triangles[i];
+        var p1 = triangles[i + 1];
+        var p2 = triangles[i + 2];
+        ctx.moveTo(getX(p0), getY(p0));
+        ctx.lineTo(getX(p1), getY(p1));
+        ctx.lineTo(getX(p2), getY(p2));
+        ctx.closePath();
+    }
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 1.0;
+    ctx.stroke();
+
+    ctx.beginPath();
+    for (const i of delaunay.hull) {
+        ctx.lineTo(getX(i), getY(i));
+    }
+    ctx.closePath();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = '';
+    ctx.stroke();
+}
+</script>
+
+</body></html>
