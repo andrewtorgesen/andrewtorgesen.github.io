@@ -39,7 +39,7 @@ The piece below, which I'm calling *Svegliando*, is a combination of various fra
 
 ![](/images/art/Svegliando.png "Svegliando")
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TbX_hLWePcc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zFfTkwwUOdk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 This next piece is called *Oddball in Naples*, and is a stylized stitching together of several (7-8) different paintings which caught my wife's and my eye at the Boston Museum of Fine Art. Somewhat coincidentally, several of the paintings happened to be depicting the bay and town of Naples. However, the show-stealer for my wife was a painting of an exotic jungle flower, so that became the "oddball." The final painting and time-lapse creation video are below.
 
