@@ -9,7 +9,7 @@ signature: /images/art/over-the-top-signature.svg
 
 # About Me
 
-I am a graduate student at the Massachusetts Institute of Technology, and am passionate about tackling problems in computer vision and robot autonomy, estimation, and control. I'm experienced with fixed-wing and multi-rotor unmanned air vehicles (UAVs). I have a deep and abiding love for learning, and am interested in devising better problem solving methodologies and learning new technologies and tools whenever the need arises.
+I am a [graduate student at the Massachusetts Institute of Technology](http://acl.mit.edu/people/torgesen), and am passionate about tackling problems in computer vision and robot autonomy, estimation, and control. I'm experienced with fixed-wing and multi-rotor unmanned air vehicles (UAVs). I have a deep and abiding love for learning, and am interested in devising better problem solving methodologies and learning new technologies and tools whenever the need arises.
 
 
 My deepest intellectual interests lie at the intersection of control theory, statistical analysis, path planning, and artificial intelligence. It is in this sphere of overlapping disciplines that inanimate objects appear to take on a life of their own, leveraging sophisticated and cutting-edge algorithms to accomplish difficult tasks that are useful for promoting the safety, productivity, and general effectiveness of individuals and societies.
