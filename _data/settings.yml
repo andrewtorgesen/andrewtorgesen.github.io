@@ -22,7 +22,7 @@ menu_settings:
       url: '/softwaretools/'
     - title: 'Digital Art'
       url: '/DigitalArt'
-    - title: 'Essays'
+    - title: 'Notes and Essays'
       url: '/Essays'
     - title: 'Contact'
       url: '/Contact'
