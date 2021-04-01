@@ -385,7 +385,7 @@ function toggleInfo(articleid) {
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Menu
 
 	$(document).on('click', '.js-menu-toggle', function (){
-
+		alert("HI");
 		// If already open
 		if ( $('body').hasClass('menu--open') ) {
 			$('body').removeClass('menu--open');
