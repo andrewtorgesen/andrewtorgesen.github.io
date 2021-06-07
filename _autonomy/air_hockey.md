@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: "A Comparison Study of Various Trajectory Optimization Techniques for Multi-Agent Air Hockey"
+title: "Multi-Agent Air Hockey"
 subtitle: "Class project for the graduate-level underactuated robotics course at MIT."
 featured_image: /images/projects/air_hockey.png
 active: true

@@ -9,13 +9,12 @@ signature: /images/art/over-the-top-signature.svg
 
 # About Me
 
-I am a [graduate student at the Massachusetts Institute of Technology](http://acl.mit.edu/people/torgesen), and am passionate about tackling problems in computer vision and robot autonomy, estimation, and control. I'm experienced with fixed-wing and multi-rotor unmanned air vehicles (UAVs). I have a deep and abiding love for learning, and am interested in devising better problem solving methodologies and learning new technologies and tools whenever the need arises.
+I use applied math and physics-based models to write software that runs on (mostly flying) robots, allowing them to see, map their surroundings, and ostensibly take on a life of their own. Stated differently, I am passionate about tackling problems in computer vision and robot autonomy, estimation, and control. This passion has been fomented through my undergraduate research at BYU, a research-based Masters at MIT ([thesis](https://andrewtorgesen.github.io/res/thesis.pdf)), and my subsequent career doing AI-based defense work.
 
 
 My deepest intellectual interests lie at the intersection of control theory, statistical analysis, path planning, and artificial intelligence. It is in this sphere of overlapping disciplines that inanimate objects appear to take on a life of their own, leveraging sophisticated and cutting-edge algorithms to accomplish difficult tasks that are useful for promoting the safety, productivity, and general effectiveness of individuals and societies.
 
 
-My respect and endless curiosity for the field of autonomy is reflected in my desire to make my mark on the frontiers of the field, enabling incremental progress in the areas of control theory, simultaneous localization and mapping (SLAM), and/or goal-based path planning on robotic platforms.
-
-
 All of that said, my interests and pursuits encompass more than engineering and mathematics. I have long been interested in philosophy, music, art, and sports. Digital painting is one of my favorite hobbies. Ahead of all that, my deepest satisfaction comes from being with my wife and family.
+
+Check out my [portfolio](portfolio) for a sampling of some school and personal projects (i.e., open-source and non-proprietary) that I've worked on.
