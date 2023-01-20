@@ -29,20 +29,6 @@ This next piece is called *Oddball in Naples*, and is a stylized stitching toget
 
 ![](/images/art/Exodus_Cropped.png "Exodus Painted")
 
-## Portraits
+![](/images/art/A_Turtles_Paradise.png "A Turtle's Paradise")
 
-![](/images/art/Headshot_Sketch.png "Headshot Sketch")
-
-![](/images/art/IMG_0266.PNG "Portrait 1")
-
-![](/images/art/IMG_0267.PNG "Portrait 2")
-
-![](/images/art/IMG_0268.PNG "Portrait 3")
-
-![](/images/art/IMG_0269.PNG "Portrait 4")
-
-![](/images/art/mapoftheworld.png "Portrait 5")
-
-![](/images/art/K.png "Portrait 6")
-
-![](/images/art/mamiYPapi.png "Portrait 6")
+![](/images/art/Castle_View.png "Castle View")
