@@ -1,8 +1,11 @@
 ---
 layout: default
 name: Andrew Torgesen
+title: Andrew Torgesen
 description: Personal Page
+subtitle: Portfolio Website
 portrait: /images/Headshot.png
+featured_image: /favicon.png
 ---
 
 WHY AM I SEEING THIS
@@ -25,9 +28,9 @@ WHY AM I SEEING THIS
                                     <img src="{{ post.portrait }}" width="100%">
                                 </div>
                                 <div class="side-intro">
-                                <p>
-                                    <!-- {{ page.content }} -->
-                                </p>
+                                    <p>
+                                        <!-- {{ page.content }} -->
+                                    </p>
                                 </div>
                             </td>
                             <td width="38%" class="side-portrait">
@@ -49,12 +52,14 @@ WHY AM I SEEING THIS
 
     {% if paginator.previous_page %}
     <div class="pagination__prev">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="button button--large"><i class="fa fa-angle-left" aria-hidden="true"></i> <span>Newer Posts</span></a>
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="button button--large"><i
+                class="fa fa-angle-left" aria-hidden="true"></i> <span>Newer Posts</span></a>
     </div>
     {% endif %}
     {% if paginator.next_page %}
     <div class="pagination__next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="button button--large"><span>Older Posts</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="button button--large"><span>Older
+                Posts</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
     </div>
     {% endif %}
 

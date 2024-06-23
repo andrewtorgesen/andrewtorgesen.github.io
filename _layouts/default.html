@@ -42,7 +42,7 @@
 
 	<!-- Facebook OpenGraph -->
 	<meta property="og:title" content="{% if page.url == "/" %}{{ site.data.settings.basic_settings.site_title }} - {{ site.data.settings.basic_settings.site_tagline }}{% elsif page.url contains "/people/" %}{% if page.url contains "index" %}{{ page.title }} - {{ site.data.settings.basic_settings.site_title }}{% else %}{{ page.name }} - {{ site.data.settings.basic_settings.site_title }}{% endif %}{% else %}{{ page.title }} - {{ site.data.settings.basic_settings.site_title }}{% endif %}" />
-	<meta property="og:description" content="{{ page.description }}" />
+	<meta property="og:description" content="{{ page.subtitle }}" />
 	<meta property="og:image" content="{{ site.url }}{{ page.featured_image }}" />
 
 	{% if site.data.settings.font_settings.font_embed %}

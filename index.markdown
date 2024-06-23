@@ -17,4 +17,4 @@ My deepest intellectual interests lie at the intersection of control theory, sta
 
 All of that said, my interests and pursuits encompass more than engineering and mathematics. I have long been interested in philosophy, music, art, and sports. Digital painting is one of my favorite hobbies. Ahead of all that, my deepest satisfaction comes from being with my wife and family.
 
-Check out my [portfolio](portfolio) for a sampling of some school and personal projects (i.e., open-source and non-proprietary) that I've worked on.
+Check out my [portfolio](portfolio) and [software documentation](http://software.andrewtorgesen.com) for a sampling of some school and personal projects (i.e., open-source and non-proprietary) that I've worked on.
