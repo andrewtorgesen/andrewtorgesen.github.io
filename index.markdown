@@ -7,6 +7,10 @@ portrait: /images/Headshot-NF.jpg
 signature: /images/art/over-the-top-signature.svg
 ---
 
+# This Site Has Migrated
+
+Please visit [https://andrewtorgesen.com/](https://andrewtorgesen.com/) for the most up-to-date portfolio! 
+
 # About Me
 
 I use applied math and physics-based models to write software that runs on (mostly flying) robots, allowing them to see, map their surroundings, and ostensibly take on a life of their own. Stated differently, I am passionate about tackling problems in computer vision and robot autonomy, estimation, and control. This passion has been fomented through my undergraduate research at BYU, a research-based Masters at MIT ([thesis](https://andrewtorgesen.github.io/res/thesis.pdf)), and my subsequent career doing AI-based defense work.
